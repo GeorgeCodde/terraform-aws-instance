@@ -26,6 +26,10 @@ tf-plan: ##  --terraform plan--
 tf-apply: ##  --terraform apply--
 	docker-compose -f deploy/docker-compose.yml run --rm terraform apply
 
+.PHONY: tf-output
+tf-output: ##  --terraform output--
+	docker-compose -f deploy/docker-compose.yml run --rm terraform output
+	
 .PHONY: tf-destroy
 tf-destroy: ##  --terraform destroy--
 	docker-compose -f deploy/docker-compose.yml run --rm terraform destroy
